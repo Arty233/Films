@@ -19,7 +19,6 @@ namespace Films
         public string Password { get; set; }
 
         [Required]
-        [MaxLength(50)]
-        public byte[] IsAdmin { get; set; }
+        public bool IsAdmin { get; set; }
     }
 }

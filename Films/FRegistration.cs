@@ -16,5 +16,20 @@ namespace Films
         {
             InitializeComponent();
         }
+
+        FilmsDB films = new FilmsDB();
+
+        private void FRegistration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BReg_Click(object sender, EventArgs e)
+        {
+            User us = films.NewUser(TbLogin.Text, TbPassword.Text, CbAdmin.Checked);
+            if (us == null)
+                MessageBox.Show("Error in creating of new account, checking data, please");
+            this.Close();
+        }
     }
 }

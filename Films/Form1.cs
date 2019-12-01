@@ -24,7 +24,8 @@ namespace Films
 
         private void BRegistration_Click(object sender, EventArgs e)
         {
-
+            FRegistration fReg = new FRegistration();
+            fReg.Show();
         }
 
         

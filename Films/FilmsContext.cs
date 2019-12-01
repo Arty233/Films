@@ -71,8 +71,8 @@ namespace Films
                 .IsFixedLength();
 
             modelBuilder.Entity<User>()
-                .Property(e => e.IsAdmin)
-                .IsFixedLength();
+                .Property(e => e.IsAdmin);
+                
         }
     }
 }
