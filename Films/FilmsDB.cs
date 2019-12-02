@@ -54,5 +54,16 @@ namespace Films
             }
 
         }
+
+        public int Authorisation(string log, string pass)
+        {
+            User us = db.Users.Where(p => (p.UserName == log)).FirstOrDefault();
+            if (us != null)
+            {
+                return Convert.ToInt32(us.IsAdmin);
+            }
+            else
+                return -1;
+        }
     }
 }

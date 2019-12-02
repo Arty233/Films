@@ -57,6 +57,12 @@
   <ItemGroup>
     <Compile Include="Actor.cs" />
     <Compile Include="Director.cs" />
+    <Compile Include="FAdministration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAdministration.Designer.cs">
+      <DependentUpon>FAdministration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Film.cs" />
     <Compile Include="FilmsActor.cs" />
     <Compile Include="FilmsContext.cs" />
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="FRegistration.Designer.cs">
       <DependentUpon>FRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUsers.Designer.cs">
+      <DependentUpon>FUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Genre.cs" />
     <Compile Include="Program.cs" />
