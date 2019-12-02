@@ -57,7 +57,7 @@ namespace Films
 
         public int Authorisation(string log, string pass)
         {
-            User us = db.Users.Where(p => (p.UserName == log)).FirstOrDefault();
+            User us = db.Users.Where(p => ((p.UserName == log) && (p.Password == pass))).FirstOrDefault();
             if (us != null)
             {
                 return Convert.ToInt32(us.IsAdmin);
