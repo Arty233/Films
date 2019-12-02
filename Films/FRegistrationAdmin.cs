@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Films
 {
-    public partial class FRegistration : Form
+    public partial class FRegistrationAdmin : Form
     {
-        public FRegistration()
+        public FRegistrationAdmin()
         {
             InitializeComponent();
         }
@@ -26,13 +26,23 @@ namespace Films
 
         private void BReg_Click(object sender, EventArgs e)
         {
-            User us = films.NewUser(TbLogin.Text, TbPassword.Text, false);
+            User us = films.NewUser(TbLogin.Text, TbPassword.Text, true);
             if (us == null)
                 MessageBox.Show("Error in creating of new account, checking data, please");
             this.Close();
         }
 
         private void CbAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FRegistrationAdmin_Load(object sender, EventArgs e)
         {
 
         }

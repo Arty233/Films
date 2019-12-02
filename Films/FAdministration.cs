@@ -47,5 +47,11 @@ namespace Films
                 listBox1.Items.Add(l.Genre);
             };
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FRegistrationAdmin fReg = new FRegistrationAdmin();
+            fReg.Show();
+        }
     }
 }

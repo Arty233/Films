@@ -8,9 +8,11 @@ namespace Films
 {
     static class Program
     {
-        /// <summary>
+        /// <summary> 
         /// The main entry point for the application.
         /// </summary>
+        // С 15:00 во вторник
+        // С 15:00 214 в среду
         [STAThread]
         static void Main()
         {
