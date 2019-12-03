@@ -65,5 +65,25 @@ namespace Films
             else
                 return -1;
         }
+
+        public Film NewFilm(string name, DateTime? relDate, string descr)
+        {
+            Film film = db.Films.Where(p => (p.FilmName == name) 
+                                    & (p.ReleaseDate == relDate)).FirstOrDefault();
+            if (film != null)
+            {
+                return null;
+            }
+            else
+            {
+                Film t = new Film();
+                t.FilmName = name;
+                t.FilmDescription = descr;
+                t.ReleaseDate = relDate;
+                db.Films.Add(t);
+                db.SaveChanges();
+                return t;
+            }
+        }
     }
 }

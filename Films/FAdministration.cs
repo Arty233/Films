@@ -48,10 +48,22 @@ namespace Films
             };
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BRegistration_Click_Click(object sender, EventArgs e)
         {
             FRegistrationAdmin fReg = new FRegistrationAdmin();
             fReg.Show();
+        }
+
+        private void DgFilms_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BAddFilm_Click(object sender, EventArgs e)
+        {
+            FAddFilm fAdd = new FAddFilm();
+            fAdd.Show();
+            this.Close();
         }
     }
 }
