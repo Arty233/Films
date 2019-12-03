@@ -9,6 +9,7 @@ namespace Films
     class FilmsDB
     {
         FilmsContext db;
+       
         public FilmsDB()
         {
             db = new FilmsContext();
@@ -84,6 +85,14 @@ namespace Films
                 db.SaveChanges();
                 return t;
             }
+        }
+        public Genre AddGenreToFilm(Film film, Genre genre)
+        {
+            FilmsGenre fg = new FilmsGenre();
+            fg.Genre = genre;
+            fg.Film = film;
+            db.FilmsGenres.Add(fg);
+            return genre;
         }
     }
 }

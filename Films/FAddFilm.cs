@@ -35,5 +35,10 @@ namespace Films
             fAdministration.Show();
             this.Close();
         }
+
+        private void FAddFilm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

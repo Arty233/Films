@@ -69,6 +69,12 @@
     <Compile Include="FAdministration.Designer.cs">
       <DependentUpon>FAdministration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FFilmAdministration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFilmAdministration.Designer.cs">
+      <DependentUpon>FFilmAdministration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Film.cs" />
     <Compile Include="FilmsActor.cs" />
     <Compile Include="FilmsContext.cs" />
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FAdministration.resx">
       <DependentUpon>FAdministration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFilmAdministration.resx">
+      <DependentUpon>FFilmAdministration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

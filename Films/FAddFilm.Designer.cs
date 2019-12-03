@@ -90,6 +90,7 @@
             this.Controls.Add(this.TbName);
             this.Name = "FAddFilm";
             this.Text = "FAddFilm";
+            this.Load += new System.EventHandler(this.FAddFilm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
