@@ -21,7 +21,18 @@ namespace Films
 
         private void BAdd_Click(object sender, EventArgs e)
         {
-            Film film = films.NewFilm(TbName.Text, Convert.ToDateTime(TbDate.Text), TbDescr.Text);
+            if (TbName.Text.Length == 0)
+            {
+                MessageBox.Show("Name can't be empty");
+                return;
+            }
+            DateTime data;
+            if (!DateTime.TryParse(TbDate.Text,out data))
+            {
+                MessageBox.Show("Wrong data");
+                return;
+            }
+            Film film = films.NewFilm(TbName.Text, data, TbDescr.Text);
             if (film == null)
                 MessageBox.Show("Error in creating of new film, checking data, please");
             FAdministration fAdministration = new FAdministration();

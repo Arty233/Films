@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -62,6 +63,12 @@
     </Compile>
     <Compile Include="FAddFilm.Designer.cs">
       <DependentUpon>FAddFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FAddGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAddGenre.Designer.cs">
+      <DependentUpon>FAddGenre.cs</DependentUpon>
     </Compile>
     <Compile Include="FAdministration.cs">
       <SubType>Form</SubType>
@@ -104,6 +111,12 @@
     <Compile Include="FRegistrationAdmin.Designer.cs">
       <DependentUpon>FRegistrationAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FUserInspect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUserInspect.Designer.cs">
+      <DependentUpon>FUserInspect.cs</DependentUpon>
+    </Compile>
     <Compile Include="FUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +130,9 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="FAddFilm.resx">
       <DependentUpon>FAddFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAddGenre.resx">
+      <DependentUpon>FAddGenre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FAdministration.resx">
       <DependentUpon>FAdministration.cs</DependentUpon>
@@ -132,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRegistrationAdmin.resx">
       <DependentUpon>FRegistrationAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FUserInspect.resx">
+      <DependentUpon>FUserInspect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FUsers.resx">
+      <DependentUpon>FUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

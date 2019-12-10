@@ -16,5 +16,20 @@ namespace Films
         {
             InitializeComponent();
         }
+
+        private void FUsers_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'filmsDataSet.Films' table. You can move, or remove it, as needed.
+            this.filmsTableAdapter.Fill(this.filmsDataSet.Films);
+
+        }
+
+        private void BInspect_Click(object sender, EventArgs e)
+        {
+            string filmToInspect = DgFilms.CurrentRow.Cells["filmNameDataGridViewTextBoxColumn"].Value.ToString();
+            FUserInspect ui = new FUserInspect(filmToInspect);
+            ui.Show();
+
+        }
     }
 }

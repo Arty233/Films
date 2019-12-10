@@ -69,8 +69,7 @@ namespace Films
 
         public Film NewFilm(string name, DateTime? relDate, string descr)
         {
-            Film film = db.Films.Where(p => (p.FilmName == name) 
-                                    & (p.ReleaseDate == relDate)).FirstOrDefault();
+            Film film = db.Films.Where(p => (p.FilmName == name)).FirstOrDefault();
             if (film != null)
             {
                 return null;
@@ -86,13 +85,60 @@ namespace Films
                 return t;
             }
         }
-        public Genre AddGenreToFilm(Film film, Genre genre)
+
+        public void DeleteFilm(string name)
+        {
+            Film film = db.Films.Where(p => (p.FilmName == name)).FirstOrDefault();
+            FilmsGenre fg = db.FilmsGenres.Where(p => (p.Film.FilmName == name)).FirstOrDefault();
+            while (fg != null)
+            {
+                db.FilmsGenres.Remove(fg);
+                db.SaveChanges();
+                fg = db.FilmsGenres.Where(p => (p.Film.FilmName == name)).FirstOrDefault();
+            }
+            db.Films.Remove(film);
+            db.SaveChanges();
+        }
+
+        public Genre NewGenre(string name)
+        {
+            Genre genre = db.Genres.Where(p => (p.GenreName == name)).FirstOrDefault();
+            if (genre != null)
+            {
+                return null;
+            }
+            else
+            {
+                Genre t = new Genre();
+                t.GenreName = name;                
+                db.Genres.Add(t);
+                db.SaveChanges();
+                return t;
+            }
+        }
+
+        public void DeleteGenre(string name)
+        {
+            Genre genre = db.Genres.Where(p => (p.GenreName == name)).FirstOrDefault();
+            FilmsGenre fg = db.FilmsGenres.Where(p => (p.Genre.GenreName == name)).FirstOrDefault();
+            while (fg != null)
+            {
+                db.FilmsGenres.Remove(fg);
+                db.SaveChanges();
+                fg = db.FilmsGenres.Where(p => (p.Genre.GenreName == name)).FirstOrDefault();
+            }
+            db.Genres.Remove(genre);
+            db.SaveChanges();
+
+        }
+        public void AddGenreToFilm(string film, string genre)
         {
             FilmsGenre fg = new FilmsGenre();
-            fg.Genre = genre;
-            fg.Film = film;
+            fg.Genre = db.Genres.Where(p => (p.GenreName == genre)).FirstOrDefault();
+            fg.Film = db.Films.Where(p => (p.FilmName == film)).FirstOrDefault(); 
             db.FilmsGenres.Add(fg);
-            return genre;
+            db.SaveChanges();
+            
         }
     }
 }

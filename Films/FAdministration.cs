@@ -23,6 +23,8 @@ namespace Films
 
         private void FAdministration_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'filmsDataSet.Genres' table. You can move, or remove it, as needed.
+            this.genresTableAdapter.Fill(this.filmsDataSet.Genres);
             // TODO: This line of code loads data into the 'filmsDataSet.Films' table. You can move, or remove it, as needed.
             this.filmsTableAdapter.Fill(this.filmsDataSet.Films);       
             DgFilms.DataSource = db.Films.ToList();
@@ -55,9 +57,31 @@ namespace Films
 
         private void BChange_Click(object sender, EventArgs e)
         {   
-            string filmToShow = DgFilms.CurrentRow.Cells["filmNameDataGridViewTextBoxColumn"].Value.ToString();
-            FFilmAdministration ffa = new FFilmAdministration(filmToShow);
+            //string filmToShow = DgFilms.CurrentRow.Cells["filmNameDataGridViewTextBoxColumn"].Value.ToString();
+            FFilmAdministration ffa = new FFilmAdministration();
             ffa.Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            string filmToDelete = DgFilms.CurrentRow.Cells["filmNameDataGridViewTextBoxColumn"].Value.ToString();
+            FilmsDB films = new FilmsDB();
+            films.DeleteFilm(filmToDelete);
+            DgFilms.DataSource = db.Films.ToList();
+        }
+
+        private void BAddGenre_Click(object sender, EventArgs e)
+        {
+            FAddGenre ag = new FAddGenre();
+            ag.Show();
+            this.Close();
+        }
+
+        private void BdeleteGenre_Click(object sender, EventArgs e)
+        {
+            FilmsDB films = new FilmsDB();
+            films.DeleteGenre(LbGenres.Text.ToString());
+            
         }
     }
 }

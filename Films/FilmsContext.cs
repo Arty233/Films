@@ -59,12 +59,12 @@ namespace Films
             modelBuilder.Entity<Film>()
                 .HasMany(e => e.FilmsGenres)
                 .WithRequired(e => e.Film)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Genre>()
                 .HasMany(e => e.FilmsGenres)
                 .WithRequired(e => e.Genre)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<User>()
                 .Property(e => e.Password)
