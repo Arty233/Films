@@ -30,17 +30,29 @@ namespace Films
             {
                 actList = actList + l.Actor.ActorName + "; ";
             }
-            LActors.Text = actList.Substring(0, actList.Length - 2);
+            if (actList.Length > 2)
+                LActors.Text = actList.Substring(0, actList.Length - 2);
+            else
+            {
+                LActors.Text = "Нет информации об актёрах";
+            }
             //
             string dirList = "";
             foreach (var l in film.FilmsDirectors)
             {
                 dirList = dirList + l.Director.DirectorName + "; ";
             }
-            LDirectors.Text = dirList.Substring(0, dirList.Length - 2);
+            if (dirList.Length > 2)
+                LDirectors.Text = dirList.Substring(0, dirList.Length - 2);
+            else
+            {
+                LDirectors.Text = "Нет информации о режиссерах";
+            }
             //
             if (film.Image != null & File.Exists(IMAGE_PATH + film.Image))
                 pictureBox1.ImageLocation = IMAGE_PATH + film.Image;
+            //
+            LRating.Text = Convert.ToString(film.Popularity);
         }
 
         private void FUserInspect_Load(object sender, EventArgs e)

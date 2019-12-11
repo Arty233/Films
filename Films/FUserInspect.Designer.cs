@@ -37,6 +37,8 @@
             this.LDirectors = new System.Windows.Forms.Label();
             this.LData = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LRating = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,11 +119,33 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label3.Location = new System.Drawing.Point(434, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Рейтинг:";
+            // 
+            // LRating
+            // 
+            this.LRating.AutoSize = true;
+            this.LRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.LRating.Location = new System.Drawing.Point(505, 27);
+            this.LRating.Name = "LRating";
+            this.LRating.Size = new System.Drawing.Size(46, 17);
+            this.LRating.TabIndex = 9;
+            this.LRating.Text = "label4";
+            // 
             // FUserInspect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LRating);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LData);
             this.Controls.Add(this.LDirectors);
@@ -149,5 +173,7 @@
         private System.Windows.Forms.Label LDirectors;
         private System.Windows.Forms.Label LData;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LRating;
     }
 }

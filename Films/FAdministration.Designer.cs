@@ -48,12 +48,12 @@
             this.genresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genresTableAdapter = new Films.FilmsDataSetTableAdapters.GenresTableAdapter();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BDeleteActor = new System.Windows.Forms.Button();
+            this.BAddActor = new System.Windows.Forms.Button();
             this.LbActors = new System.Windows.Forms.ListBox();
             this.actorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BUpdate = new System.Windows.Forms.Button();
             this.actorsTableAdapter = new Films.FilmsDataSetTableAdapters.ActorsTableAdapter();
-            this.BAddActor = new System.Windows.Forms.Button();
-            this.BDeleteActor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.filmsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgFilms)).BeginInit();
@@ -157,7 +157,7 @@
             // 
             // BAddGenre
             // 
-            this.BAddGenre.Location = new System.Drawing.Point(0, 34);
+            this.BAddGenre.Location = new System.Drawing.Point(6, 34);
             this.BAddGenre.Name = "BAddGenre";
             this.BAddGenre.Size = new System.Drawing.Size(123, 23);
             this.BAddGenre.TabIndex = 10;
@@ -179,7 +179,7 @@
             // 
             // BdeleteGenre
             // 
-            this.BdeleteGenre.Location = new System.Drawing.Point(0, 76);
+            this.BdeleteGenre.Location = new System.Drawing.Point(6, 76);
             this.BdeleteGenre.Name = "BdeleteGenre";
             this.BdeleteGenre.Size = new System.Drawing.Size(123, 23);
             this.BdeleteGenre.TabIndex = 12;
@@ -214,17 +214,37 @@
             this.groupBox2.Controls.Add(this.LbActors);
             this.groupBox2.Location = new System.Drawing.Point(156, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(262, 122);
+            this.groupBox2.Size = new System.Drawing.Size(293, 122);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Актёры";
+            // 
+            // BDeleteActor
+            // 
+            this.BDeleteActor.Location = new System.Drawing.Point(7, 75);
+            this.BDeleteActor.Name = "BDeleteActor";
+            this.BDeleteActor.Size = new System.Drawing.Size(122, 23);
+            this.BDeleteActor.TabIndex = 14;
+            this.BDeleteActor.Text = "Удалить";
+            this.BDeleteActor.UseVisualStyleBackColor = true;
+            this.BDeleteActor.Click += new System.EventHandler(this.BDeleteActor_Click);
+            // 
+            // BAddActor
+            // 
+            this.BAddActor.Location = new System.Drawing.Point(6, 34);
+            this.BAddActor.Name = "BAddActor";
+            this.BAddActor.Size = new System.Drawing.Size(123, 23);
+            this.BAddActor.TabIndex = 13;
+            this.BAddActor.Text = "Добавить актера";
+            this.BAddActor.UseVisualStyleBackColor = true;
+            this.BAddActor.Click += new System.EventHandler(this.BAddActor_Click);
             // 
             // LbActors
             // 
             this.LbActors.DataSource = this.actorsBindingSource;
             this.LbActors.DisplayMember = "ActorName";
             this.LbActors.FormattingEnabled = true;
-            this.LbActors.Location = new System.Drawing.Point(127, 21);
+            this.LbActors.Location = new System.Drawing.Point(167, 21);
             this.LbActors.Name = "LbActors";
             this.LbActors.Size = new System.Drawing.Size(120, 95);
             this.LbActors.TabIndex = 0;
@@ -248,26 +268,6 @@
             // actorsTableAdapter
             // 
             this.actorsTableAdapter.ClearBeforeFill = true;
-            // 
-            // BAddActor
-            // 
-            this.BAddActor.Location = new System.Drawing.Point(6, 34);
-            this.BAddActor.Name = "BAddActor";
-            this.BAddActor.Size = new System.Drawing.Size(123, 23);
-            this.BAddActor.TabIndex = 13;
-            this.BAddActor.Text = "Добавить актера";
-            this.BAddActor.UseVisualStyleBackColor = true;
-            this.BAddActor.Click += new System.EventHandler(this.BAddActor_Click);
-            // 
-            // BDeleteActor
-            // 
-            this.BDeleteActor.Location = new System.Drawing.Point(7, 75);
-            this.BDeleteActor.Name = "BDeleteActor";
-            this.BDeleteActor.Size = new System.Drawing.Size(122, 23);
-            this.BDeleteActor.TabIndex = 14;
-            this.BDeleteActor.Text = "Удалить";
-            this.BDeleteActor.UseVisualStyleBackColor = true;
-            this.BDeleteActor.Click += new System.EventHandler(this.BDeleteActor_Click);
             // 
             // FAdministration
             // 

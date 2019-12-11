@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.CbGenre = new System.Windows.Forms.ComboBox();
-            this.LFilmName = new System.Windows.Forms.Label();
             this.BAddGenre = new System.Windows.Forms.Button();
             this.BDeleteGenre = new System.Windows.Forms.Button();
             this.BSave = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,7 +39,6 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.CbActor = new System.Windows.Forms.ComboBox();
             this.BDeleteActor = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.BSaveActors = new System.Windows.Forms.Button();
             this.BAddActor = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -55,16 +52,6 @@
             this.CbGenre.Name = "CbGenre";
             this.CbGenre.Size = new System.Drawing.Size(121, 21);
             this.CbGenre.TabIndex = 1;
-            // 
-            // LFilmName
-            // 
-            this.LFilmName.AutoSize = true;
-            this.LFilmName.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LFilmName.Location = new System.Drawing.Point(28, 24);
-            this.LFilmName.Name = "LFilmName";
-            this.LFilmName.Size = new System.Drawing.Size(71, 23);
-            this.LFilmName.TabIndex = 2;
-            this.LFilmName.Text = "label1";
             // 
             // BAddGenre
             // 
@@ -96,15 +83,6 @@
             this.BSave.UseVisualStyleBackColor = true;
             this.BSave.Click += new System.EventHandler(this.BSave_Click);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(232, 154);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -127,7 +105,6 @@
             // 
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.CbGenre);
-            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.BAddGenre);
             this.groupBox1.Controls.Add(this.BSave);
             this.groupBox1.Controls.Add(this.BDeleteGenre);
@@ -136,14 +113,13 @@
             this.groupBox1.Size = new System.Drawing.Size(360, 203);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Жанры";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBox2);
             this.groupBox2.Controls.Add(this.CbActor);
             this.groupBox2.Controls.Add(this.BDeleteActor);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.BSaveActors);
             this.groupBox2.Controls.Add(this.BAddActor);
             this.groupBox2.Location = new System.Drawing.Point(225, 235);
@@ -151,7 +127,7 @@
             this.groupBox2.Size = new System.Drawing.Size(360, 203);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Актёры";
             // 
             // listBox2
             // 
@@ -178,15 +154,6 @@
             this.BDeleteActor.Text = "Удалить";
             this.BDeleteActor.UseVisualStyleBackColor = true;
             this.BDeleteActor.Click += new System.EventHandler(this.BDeleteActor_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(233, 157);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // BSaveActors
             // 
@@ -216,24 +183,20 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.LFilmName);
             this.Name = "FFilmAdministration";
             this.Text = "FFilmAdministration";
             this.Load += new System.EventHandler(this.FFilmAdministration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ComboBox CbGenre;
-        private System.Windows.Forms.Label LFilmName;
         private System.Windows.Forms.Button BAddGenre;
         private System.Windows.Forms.Button BDeleteGenre;
         private System.Windows.Forms.Button BSave;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -241,7 +204,6 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ComboBox CbActor;
         private System.Windows.Forms.Button BDeleteActor;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BSaveActors;
         private System.Windows.Forms.Button BAddActor;
     }

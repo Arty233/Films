@@ -15,6 +15,18 @@ namespace Films
             db = new FilmsContext();
         }
 
+        public List<Film> ShowFilms(string name)
+        {
+            IQueryable<Film> film = db.Films;
+            if (name != "")
+            {
+                film = film.Where(p => p.FilmName == name);
+            }
+            return film.ToList();//ToList выполняет запрос
+        }
+
+
+
         public User NewUser(string log, string pass, Boolean isAdmin)
         {
             int id = 1;

@@ -30,6 +30,8 @@ namespace Films
 
         public string Image { get; set; }
 
+        public int Popularity { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FilmsActor> FilmsActors { get; set; }
 
