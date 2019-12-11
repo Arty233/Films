@@ -23,6 +23,8 @@ namespace Films
 
         private void FAdministration_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'filmsDataSet.Actors' table. You can move, or remove it, as needed.
+            this.actorsTableAdapter.Fill(this.filmsDataSet.Actors);
             // TODO: This line of code loads data into the 'filmsDataSet.Genres' table. You can move, or remove it, as needed.
             this.genresTableAdapter.Fill(this.filmsDataSet.Genres);
             // TODO: This line of code loads data into the 'filmsDataSet.Films' table. You can move, or remove it, as needed.
@@ -81,7 +83,33 @@ namespace Films
         {
             FilmsDB films = new FilmsDB();
             films.DeleteGenre(LbGenres.Text.ToString());
-            
+            FAdministration fa = new FAdministration();
+            this.Close();
+            fa.Show();
+        }
+
+        private void BUpdate_Click(object sender, EventArgs e)
+        {
+            string filmToUpdate = DgFilms.CurrentRow.Cells["filmNameDataGridViewTextBoxColumn"].Value.ToString();
+            FUpdateFilm upd = new FUpdateFilm(filmToUpdate);
+            this.Close();
+            upd.Show();
+        }
+
+        private void BAddActor_Click(object sender, EventArgs e)
+        {
+            FAddActor addActor = new FAddActor();
+            addActor.Show();
+            this.Close();
+        }
+
+        private void BDeleteActor_Click(object sender, EventArgs e)
+        {
+            FilmsDB films = new FilmsDB();
+            films.DeleteActor(LbActors.Text.ToString());
+            FAdministration fa = new FAdministration();
+            this.Close();
+            fa.Show();
         }
     }
 }

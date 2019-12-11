@@ -28,6 +28,8 @@ namespace Films
         [Column(TypeName = "text")]
         public string FilmDescription { get; set; }
 
+        public string Image { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FilmsActor> FilmsActors { get; set; }
 

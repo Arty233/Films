@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.TbImage = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TbName
@@ -62,7 +64,7 @@
             // 
             // BAdd
             // 
-            this.BAdd.Location = new System.Drawing.Point(88, 337);
+            this.BAdd.Location = new System.Drawing.Point(88, 400);
             this.BAdd.Name = "BAdd";
             this.BAdd.Size = new System.Drawing.Size(75, 23);
             this.BAdd.TabIndex = 3;
@@ -73,7 +75,7 @@
             // BCancel
             // 
             this.BCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BCancel.Location = new System.Drawing.Point(255, 337);
+            this.BCancel.Location = new System.Drawing.Point(255, 400);
             this.BCancel.Name = "BCancel";
             this.BCancel.Size = new System.Drawing.Size(75, 23);
             this.BCancel.TabIndex = 4;
@@ -111,12 +113,31 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Описание";
             // 
+            // TbImage
+            // 
+            this.TbImage.Location = new System.Drawing.Point(88, 346);
+            this.TbImage.Name = "TbImage";
+            this.TbImage.Size = new System.Drawing.Size(219, 20);
+            this.TbImage.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label4.Location = new System.Drawing.Point(88, 299);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(203, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Название файла с картинкой";
+            // 
             // FAddFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 393);
+            this.ClientSize = new System.Drawing.Size(436, 460);
             this.ControlBox = false;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.TbImage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -143,5 +164,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TbImage;
+        private System.Windows.Forms.Label label4;
     }
 }

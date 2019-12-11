@@ -58,6 +58,12 @@
   <ItemGroup>
     <Compile Include="Actor.cs" />
     <Compile Include="Director.cs" />
+    <Compile Include="FAddActor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAddActor.Designer.cs">
+      <DependentUpon>FAddActor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FAddFilm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     <Compile Include="FRegistrationAdmin.Designer.cs">
       <DependentUpon>FRegistrationAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FUpdateFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUpdateFilm.Designer.cs">
+      <DependentUpon>FUpdateFilm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FUserInspect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +140,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagram.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="FAddActor.resx">
+      <DependentUpon>FAddActor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FAddFilm.resx">
       <DependentUpon>FAddFilm.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRegistrationAdmin.resx">
       <DependentUpon>FRegistrationAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FUpdateFilm.resx">
+      <DependentUpon>FUpdateFilm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FUserInspect.resx">
       <DependentUpon>FUserInspect.cs</DependentUpon>

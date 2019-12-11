@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUserInspect));
             this.LFName = new System.Windows.Forms.Label();
             this.LDescr = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,13 +36,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LDirectors = new System.Windows.Forms.Label();
             this.LData = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LFName
             // 
             this.LFName.AutoSize = true;
             this.LFName.Font = new System.Drawing.Font("Palatino Linotype", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LFName.Location = new System.Drawing.Point(44, 58);
+            this.LFName.Location = new System.Drawing.Point(12, 219);
             this.LFName.Name = "LFName";
             this.LFName.Size = new System.Drawing.Size(69, 28);
             this.LFName.TabIndex = 0;
@@ -50,7 +53,7 @@
             // LDescr
             // 
             this.LDescr.AutoSize = true;
-            this.LDescr.Location = new System.Drawing.Point(49, 153);
+            this.LDescr.Location = new System.Drawing.Point(17, 314);
             this.LDescr.MaximumSize = new System.Drawing.Size(400, 200);
             this.LDescr.Name = "LDescr";
             this.LDescr.Size = new System.Drawing.Size(35, 13);
@@ -98,17 +101,28 @@
             // LData
             // 
             this.LData.AutoSize = true;
-            this.LData.Location = new System.Drawing.Point(49, 107);
+            this.LData.Location = new System.Drawing.Point(17, 268);
             this.LData.Name = "LData";
             this.LData.Size = new System.Drawing.Size(35, 13);
             this.LData.TabIndex = 6;
             this.LData.Text = "label3";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(20, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(233, 189);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // FUserInspect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LData);
             this.Controls.Add(this.LDirectors);
             this.Controls.Add(this.label2);
@@ -119,6 +133,7 @@
             this.Name = "FUserInspect";
             this.Text = "FUserInspect";
             this.Load += new System.EventHandler(this.FUserInspect_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +148,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LDirectors;
         private System.Windows.Forms.Label LData;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

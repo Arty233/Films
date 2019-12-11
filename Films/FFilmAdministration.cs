@@ -31,6 +31,9 @@ namespace Films
             CbGenre.DataSource = db.Genres.ToList();
             CbGenre.DisplayMember = "GenreName";
             CbGenre.ValueMember = "GenreID";
+            CbActor.DataSource = db.Actors.ToList();
+            CbActor.DisplayMember = "ActorName";
+            CbActor.ValueMember = "ActorID";
             
 
         }
@@ -48,6 +51,12 @@ namespace Films
             foreach (var l in film.FilmsGenres)
             {
                 listBox1.Items.Add(l.Genre.GenreName);
+            };
+
+            listBox2.Items.Clear();
+            foreach (var l in film.FilmsActors)
+            {
+                listBox2.Items.Add(l.Actor.ActorName);
             };
         }
 
@@ -105,6 +114,41 @@ namespace Films
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BAddActor_Click(object sender, EventArgs e)
+        {
+            Actor actor = (Actor)CbActor.SelectedItem;
+            Film film = (Film)comboBox1.SelectedItem;
+            FilmsActor fa = new FilmsActor();
+            fa.Actor = actor;
+            fa.Film = film;
+            // Добавляем жанр к фильму
+            db.FilmsActors.Add(fa);
+            // и листбоксу
+            listBox2.Items.Add(actor.ActorName);
+        }
+
+        private void BDeleteActor_Click(object sender, EventArgs e)
+        {
+            Actor actor = (Actor)CbActor.SelectedItem;
+            Film film = (Film)comboBox1.SelectedItem;
+            FilmsActor fa = db.FilmsActors.Where(p => (p.Film.FilmName == film.FilmName)
+                                                    & (p.Actor.ActorName == actor.ActorName)).FirstOrDefault();
+            // Очищаем жанры для фильма
+            if (fa == null)
+            {
+                MessageBox.Show("Сначала необходимо сохранить изменения");
+                return;
+            }
+            db.FilmsActors.Remove(fa);
+            // и листбокс
+            listBox2.Items.Remove(actor.ActorName);
+        }
+
+        private void BSaveActors_Click(object sender, EventArgs e)
+        {
+            db.SaveChanges();
         }
     }
 }

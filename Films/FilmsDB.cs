@@ -67,7 +67,7 @@ namespace Films
                 return -1;
         }
 
-        public Film NewFilm(string name, DateTime? relDate, string descr)
+        public Film NewFilm(string name, DateTime? relDate, string descr, string img)
         {
             Film film = db.Films.Where(p => (p.FilmName == name)).FirstOrDefault();
             if (film != null)
@@ -80,10 +80,24 @@ namespace Films
                 t.FilmName = name;
                 t.FilmDescription = descr;
                 t.ReleaseDate = relDate;
+                t.Image = img;
                 db.Films.Add(t);
                 db.SaveChanges();
                 return t;
             }
+        }
+
+        public Boolean UpdateFilm(string name, string newName, DateTime? relDate, string descr, string img)
+        {
+            Film film = db.Films.Where(p => (p.FilmName == name)).FirstOrDefault();
+            if (film == null)
+                return false;
+            film.FilmName = newName;
+            film.ReleaseDate = relDate;
+            film.FilmDescription = descr;
+            film.Image = img;
+            db.SaveChanges();
+            return true;
         }
 
         public void DeleteFilm(string name)
@@ -139,6 +153,38 @@ namespace Films
             db.FilmsGenres.Add(fg);
             db.SaveChanges();
             
+        }
+
+        public Actor NewActor(string name)
+        {
+            Actor actor = db.Actors.Where(p => (p.ActorName == name)).FirstOrDefault();
+            if (actor != null)
+            {
+                return null;
+            }
+            else
+            {
+                Actor t = new Actor();
+                t.ActorName = name;
+                db.Actors.Add(t);
+                db.SaveChanges();
+                return t;
+            }
+        }
+
+        public void DeleteActor(string name)
+        {
+            Actor actor = db.Actors.Where(p => (p.ActorName == name)).FirstOrDefault();
+            FilmsActor fa = db.FilmsActors.Where(p => (p.Actor.ActorName == name)).FirstOrDefault();
+            while (fa != null)
+            {
+                db.FilmsActors.Remove(fa);
+                db.SaveChanges();
+                fa = db.FilmsActors.Where(p => (p.Actor.ActorName == name)).FirstOrDefault();
+            }
+            db.Actors.Remove(actor);
+            db.SaveChanges();
+
         }
     }
 }

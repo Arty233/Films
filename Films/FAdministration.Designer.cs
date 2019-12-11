@@ -48,7 +48,12 @@
             this.genresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genresTableAdapter = new Films.FilmsDataSetTableAdapters.GenresTableAdapter();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lBox = new System.Windows.Forms.ListBox();
+            this.LbActors = new System.Windows.Forms.ListBox();
+            this.actorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BUpdate = new System.Windows.Forms.Button();
+            this.actorsTableAdapter = new Films.FilmsDataSetTableAdapters.ActorsTableAdapter();
+            this.BAddActor = new System.Windows.Forms.Button();
+            this.BDeleteActor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.filmsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgFilms)).BeginInit();
@@ -56,6 +61,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.actorsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // filmsDataSet
@@ -141,7 +147,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 290);
+            this.button1.Location = new System.Drawing.Point(13, 338);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 23);
             this.button1.TabIndex = 9;
@@ -203,27 +209,72 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lBox);
-            this.groupBox2.Location = new System.Drawing.Point(189, 25);
+            this.groupBox2.Controls.Add(this.BDeleteActor);
+            this.groupBox2.Controls.Add(this.BAddActor);
+            this.groupBox2.Controls.Add(this.LbActors);
+            this.groupBox2.Location = new System.Drawing.Point(156, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(229, 122);
+            this.groupBox2.Size = new System.Drawing.Size(262, 122);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Актёры";
             // 
-            // lBox
+            // LbActors
             // 
-            this.lBox.FormattingEnabled = true;
-            this.lBox.Location = new System.Drawing.Point(96, 27);
-            this.lBox.Name = "lBox";
-            this.lBox.Size = new System.Drawing.Size(120, 95);
-            this.lBox.TabIndex = 0;
+            this.LbActors.DataSource = this.actorsBindingSource;
+            this.LbActors.DisplayMember = "ActorName";
+            this.LbActors.FormattingEnabled = true;
+            this.LbActors.Location = new System.Drawing.Point(127, 21);
+            this.LbActors.Name = "LbActors";
+            this.LbActors.Size = new System.Drawing.Size(120, 95);
+            this.LbActors.TabIndex = 0;
+            this.LbActors.ValueMember = "ActorName";
+            // 
+            // actorsBindingSource
+            // 
+            this.actorsBindingSource.DataMember = "Actors";
+            this.actorsBindingSource.DataSource = this.filmsDataSet;
+            // 
+            // BUpdate
+            // 
+            this.BUpdate.Location = new System.Drawing.Point(13, 290);
+            this.BUpdate.Name = "BUpdate";
+            this.BUpdate.Size = new System.Drawing.Size(122, 23);
+            this.BUpdate.TabIndex = 13;
+            this.BUpdate.Text = "Обновить";
+            this.BUpdate.UseVisualStyleBackColor = true;
+            this.BUpdate.Click += new System.EventHandler(this.BUpdate_Click);
+            // 
+            // actorsTableAdapter
+            // 
+            this.actorsTableAdapter.ClearBeforeFill = true;
+            // 
+            // BAddActor
+            // 
+            this.BAddActor.Location = new System.Drawing.Point(6, 34);
+            this.BAddActor.Name = "BAddActor";
+            this.BAddActor.Size = new System.Drawing.Size(123, 23);
+            this.BAddActor.TabIndex = 13;
+            this.BAddActor.Text = "Добавить актера";
+            this.BAddActor.UseVisualStyleBackColor = true;
+            this.BAddActor.Click += new System.EventHandler(this.BAddActor_Click);
+            // 
+            // BDeleteActor
+            // 
+            this.BDeleteActor.Location = new System.Drawing.Point(7, 75);
+            this.BDeleteActor.Name = "BDeleteActor";
+            this.BDeleteActor.Size = new System.Drawing.Size(122, 23);
+            this.BDeleteActor.TabIndex = 14;
+            this.BDeleteActor.Text = "Удалить";
+            this.BDeleteActor.UseVisualStyleBackColor = true;
+            this.BDeleteActor.Click += new System.EventHandler(this.BDeleteActor_Click);
             // 
             // FAdministration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BUpdate);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -241,6 +292,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.actorsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,6 +317,11 @@
         private FilmsDataSetTableAdapters.GenresTableAdapter genresTableAdapter;
         private System.Windows.Forms.Button BdeleteGenre;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox lBox;
+        private System.Windows.Forms.ListBox LbActors;
+        private System.Windows.Forms.Button BUpdate;
+        private System.Windows.Forms.BindingSource actorsBindingSource;
+        private FilmsDataSetTableAdapters.ActorsTableAdapter actorsTableAdapter;
+        private System.Windows.Forms.Button BAddActor;
+        private System.Windows.Forms.Button BDeleteActor;
     }
 }
