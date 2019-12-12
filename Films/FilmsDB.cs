@@ -17,12 +17,16 @@ namespace Films
 
         public List<Film> ShowFilms(string name)
         {
-            IQueryable<Film> film = db.Films;
-            if (name != "")
-            {
-                film = film.Where(p => p.FilmName == name);
+            Genre genre = db.Genres.Where(p => p.GenreName == name).FirstOrDefault();
+            List<FilmsGenre> fg = db.FilmsGenres.Where(p => p.GenreID == genre.GenreID).ToList();
+            List<Film> allFilms = db.Films.ToList();
+            List<Film> result = new List<Film>();
+            foreach(var t in fg)
+            {   
+                result.Add(t.Film);
             }
-            return film.ToList();//ToList выполняет запрос
+            return result;
+
         }
 
 
